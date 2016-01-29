@@ -137,7 +137,7 @@
         it('should take an object and a target and, if the target corresponds with a property in the object, returns the value. If not, it returns "target not found" ', function() {
           var testObj = {name: 'albrey', city: 'oakland'};
           var pass = collections.pluckTargetFromObject(testObj, 'name');
-          var fail = testObj(testObj, 'favoriteFood');
+          var fail = collections.pluckTargetFromObject(testObj, 'favoriteFood');
 
           expect(fail).to.equal('target not found');
           expect(pass).to.equal('albrey');
@@ -150,9 +150,10 @@
         it("takes an object, property, and value..and adds the property and value to the object. If the property already exists, overwrite it's current value with the new value.", function() {
           var sampleObj = {'rockStar': 'david bowie'};
           var add = collections.addPropertyAndValue(sampleObj, 'movieStar', 'leonardo decaprio');
+          expect(add['movieStar']).to.equal('leonardo decaprio');
           var overWrite = collections.addPropertyAndValue(sampleObj, 'movieStar', 'denzel washington');
 
-          expect(add['movieStar']).to.equal('leonardo decaprio');
+          
           expect(overWrite['movieStar']).to.equal('denzel washington');
         });
 

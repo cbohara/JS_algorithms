@@ -202,9 +202,11 @@ collections.pluckTargetFromObject(sampleObj, 'movieStar');
 collections.pluckTargetFromObject = function(object, target){
   for(var key in object){
     if(key === target){
+      console.log('pluckTargetFromObject if',object[key]);
       return object[key];
     }
     else{
+      console.log('pluckTargetFromObject else','target not found');
       return 'target not found';
     }
   }
@@ -229,7 +231,6 @@ collections.pluckTargetFromObject(sampleObj, 'movieStar', 'denzel washington');
 // {'rockStar': 'david bowie', 'movieStar': 'denzel washington'};
 
 */
-// FUCK IT! COME BACK TO THIS FUNCTION
 collections.addPropertyAndValue = function(existingObject, propertyInput, valueInput){
     //search the current object and examine property name
     for(var key in existingObject){
