@@ -86,52 +86,80 @@ calculator.add = function(num1, num2){
 // make your test case and test your answer as you go along
 var addTestCase = calculator.add(1, 2); // OUTPUT = 3
 // log your test case to the console and follow along in the browser as you build your algorithm.
-console.log(addTestCase);
+//console.log(addTestCase);
 
 
 
 // 1. create a function, calculator.subtract takes two numbers as parameters and subtracts the second one from the first one.
- 
 
+calculator.subtract = function(num1, num2){
+  return num1 - num2;
+};
+calculator.subtract(4, 6);
 
 // 2. create a function, calculator.multiply, that takes two numbers as parameters and multiplies them together
-
+calculator.multiply = function(num1, num2){
+  return num1 * num2;
+};
+calculator.multiply(2, 5);
 
 // 3. create a function, calculator.divide, that takes two numbers as parameters and divides the first one by the second one
-
+calculator.divide = function(num1, num2){
+  return num1 / num2;
+};
+calculator.divide(10,5);
 
 // 4. create a function, areaOfARectangle, that takes two parameters, length and width, and calculates the area.
-
+calculator.areaOfARectangle = function(l, w){
+  return l * w;
+};
+calculator.areaOfARectangle(10, 10);
 
 // 5. create a function, calculator.sumPlusProduct that takes gets the sum of two numbers, the product of two numbers, and adds them  
-
+calculator.sumPlusProduct = function(a, b){
+  return a + b + (a * b);
+}
+calculator.sumPlusProduct(1,2);
 
 // 6. create a function, calculator.perimeterOfARectangle, two parameters, length and width, and calculates their perimeter
-
-
+calculator.perimeterOfARectangle = function(l,w){
+  return 2 * l + 2 * w;
+};
+calculator.perimeterOfARectangle(5,9);
 // 7. create a function, calculator.areaOfACircle that takes one parameter, radius, and uses it to calculate the radius of a circle **HINT** JavaSript has a function that can help you do just this.
+calculator.areaOfACircle = function(r){
+  return Math.PI * r * r;
+}
+calculator.areaOfACircle(6);
 
 
-/* 
+ // 8. create a function, calculator.slopeOfALine that takes two arrays that each contain two points in a line calculates and their slope. Your two points are going to come from two arrays, see the example below:
+// var xCoordinates = [4, 6];
+// var yCoordinates = [5, 3];
+calculator.slopeOfALine = function(xCoordinates, yCoordinates){
+var a = xCoordinates[0];
+var b = xCoordinates[1];
+var c = yCoordinates[0];
+var d = yCoordinates[1];
+// console.log((d-c) / (b-a));
+  return  (d-c) / (b-a);
+};
+// calculator.slopeofAline();
 
-  8. create a function, calculator.slopeofALine that takes two arrays that each contain two points in a line calculates and their slope. Your two points are going to come from two arrays, see the example below:
-
-
-
-var xCoordinates = [4, 6];
-var yCoordinates = [5, 3];
-
-
-If you're not sure how to calculate slope it's TOTALLY fine to look up "how to calculate the slope of a line" google.
-
-*/
-
-
-
+/*If you're not sure how to calculate slope it's TOTALLY fine to look up "how to calculate the slope of a line" google.*/
 
 // 9. create a function, caculator.pythagorean that takes 3 parameters -- sideOne, sideTwo, sideThree -- and returns true or false as to whether they pass the pythagorean test: https://en.wikipedia.org/wiki/Pythagorean_theorem
 
-
+calculator.pythagorean = function(sideOne, sideTwo, sideThree){
+  if(sideThree === Math.sqrt((sideOne*sideOne)+(sideTwo*sideTwo))){
+    // console.log("test");
+    return true;
+  }
+  else{
+    return false;
+  };
+  
+}
 
 
 
@@ -144,16 +172,25 @@ If you're not sure how to calculate slope it's TOTALLY fine to look up "how to c
 */
 
 // 10. create a function, collections.first, that takes an array and returns the first element.
+collections.first = function(arr){   // Something stupid - The console works
+  var a = arr[0];
+  console.log("test", a);
+  return a;
+}
+
 
 
 // 11. create a function, collections.last that takes an array and returns the last element.
-
+collections.last = function(arr){// Something stupid - The console works
+  var a = arr[arr.length - 1];
+  console.log("test last element", a);
+  return a;
+}
 
 
 // 12. create a function, collections.pluckTargetFromObject that takes two parameters, an object and a target, and returns the target if it corresponds with a property inside of the object. If not, it returns 'target not found' to the user.
 
 /* CODEXAMPLE:
-
 var sampleObj = {'rockStar': 'david bowie'};
 
 collections.pluckTargetFromObject(sampleObj, 'rockStar');
@@ -161,9 +198,21 @@ collections.pluckTargetFromObject(sampleObj, 'rockStar');
 
 collections.pluckTargetFromObject(sampleObj, 'movieStar');
   // 'target not found'
-
-
 */
+collections.pluckTargetFromObject = function(object, target){
+  for(var key in object){
+    if(key === target){
+      console.log("test 3", object[key]);
+      return object[key];
+    }
+    else{
+      console.log("test 4");
+      return 'target not found';
+    }
+  }
+}
+
+
 
 
 // 13. create a function, collections.addPropertyAndValue, takes an object, property, and value..and adds the property and value to the object. If the property already exists, overwrite it's current value with the new value. Make sure to return the object to the user.
@@ -181,8 +230,18 @@ collections.pluckTargetFromObject(sampleObj, 'movieStar', 'denzel washington');
 
 // {'rockStar': 'david bowie', 'movieStar': 'denzel washington'};
 
-
 */
+collections.addPropertyAndValue = function(object, property, value){
+  for(var key in object){
+    if(key === property){
+      key = property
+    }
+  }
+}
+
+
+
+
 
 
 

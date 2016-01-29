@@ -115,7 +115,7 @@
         it('returns first element in an array ', function() {
          var arr = [1, 2, 3]
          var passTest = collections.first(arr); 
-         expect(pass).to.equal(1);
+         expect(passTest).to.equal(1);
         });
 
       });
@@ -126,7 +126,7 @@
          var arr = [1, 2, 3]
          var passTest = collections.last(arr); 
          
-         expect(pass).to.equal(3);
+         expect(passTest).to.equal(3);
          expect(arr[2]).to.equal(3);
         });
 
