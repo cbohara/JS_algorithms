@@ -174,7 +174,7 @@ calculator.pythagorean = function(sideOne, sideTwo, sideThree){
 // 10. create a function, collections.first, that takes an array and returns the first element.
 collections.first = function(arr){   // Something stupid - The console works
   var a = arr[0];
-  console.log("test", a);
+
   return a;
 }
 
@@ -183,7 +183,7 @@ collections.first = function(arr){   // Something stupid - The console works
 // 11. create a function, collections.last that takes an array and returns the last element.
 collections.last = function(arr){// Something stupid - The console works
   var a = arr[arr.length - 1];
-  console.log("test last element", a);
+  // console.log("test last element", a);
   return a;
 }
 
@@ -202,11 +202,9 @@ collections.pluckTargetFromObject(sampleObj, 'movieStar');
 collections.pluckTargetFromObject = function(object, target){
   for(var key in object){
     if(key === target){
-      console.log("test 3", object[key]);
       return object[key];
     }
     else{
-      console.log("test 4");
       return 'target not found';
     }
   }
@@ -231,13 +229,25 @@ collections.pluckTargetFromObject(sampleObj, 'movieStar', 'denzel washington');
 // {'rockStar': 'david bowie', 'movieStar': 'denzel washington'};
 
 */
-collections.addPropertyAndValue = function(object, property, value){
-  for(var key in object){
-    if(key === property){
-      key = property
+// FUCK IT! COME BACK TO THIS FUNCTION
+collections.addPropertyAndValue = function(existingObject, propertyInput, valueInput){
+    //search the current object and examine property name
+    for(var key in existingObject){
+      //if the property already exists, overwrite it's current value with the new value
+      if(key === propertyInput){
+        existingObject[key] = valueInput;
+        // console.log('if statement',existingObject);
+        return existingObject;
+      }
+      //adds the property and value to the object
+      else {
+        //add propertyInput to existingObject
+        existingObject[propertyInput] = valueInput;
+        // console.log('else',existingObject);
+        return existingObject;
+      }
     }
   }
-}
 
 
 
@@ -246,6 +256,15 @@ collections.addPropertyAndValue = function(object, property, value){
 
 
 // 15. create a function, collection.sumArray that returns the sum of an array of numbers.
+collections.sumArray = function(arr){
+  var total = 0;
+
+  for(var i = 0; i <arr.length; i++) { 
+    total += arr[i]; 
+  }
+  console.log(total);
+  return total;
+}
 
 //* TIP * : You'll need to figure out a way to save the added values into one summed variable. Think about javascript 'reassignment'
 
