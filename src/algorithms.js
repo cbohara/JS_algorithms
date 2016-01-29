@@ -91,7 +91,7 @@ console.log(addTestCase);
 
 
 // 1. create a function, calculator.subtract takes two numbers as parameters and subtracts the second one from the first one.
-
+ 
 
 
 // 2. create a function, calculator.multiply, that takes two numbers as parameters and multiplies them together
@@ -114,7 +114,7 @@ console.log(addTestCase);
 
 /* 
 
-  8. create a function, calculator.slopeofAline that takes two arrays that each contain two points in a line calculates and their slope. Your two points are going to come from two arrays, see the example below:
+  8. create a function, calculator.slopeofALine that takes two arrays that each contain two points in a line calculates and their slope. Your two points are going to come from two arrays, see the example below:
 
 
 
