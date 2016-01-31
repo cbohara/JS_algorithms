@@ -161,10 +161,6 @@ calculator.pythagorean = function(sideOne, sideTwo, sideThree){
   
 }
 
-
-
-
-
 /*
   Now that you have some practice building out a functions and approaching math algorithms, let's expand to some JS functionality that we'd use in the real world. 
 
@@ -174,7 +170,6 @@ calculator.pythagorean = function(sideOne, sideTwo, sideThree){
 // 10. create a function, collections.first, that takes an array and returns the first element.
 collections.first = function(arr){   // Something stupid - The console works
   var a = arr[0];
-
   return a;
 }
 
@@ -202,11 +197,11 @@ collections.pluckTargetFromObject(sampleObj, 'movieStar');
 collections.pluckTargetFromObject = function(object, target){
   for(var key in object){
     if(key === target){
-      console.log('pluckTargetFromObject if',object[key]);
+      // console.log('pluckTargetFromObject if',object[key]);
       return object[key];
     }
     else{
-      console.log('pluckTargetFromObject else','target not found');
+      // console.log('pluckTargetFromObject else','target not found');
       return 'target not found';
     }
   }
@@ -273,22 +268,22 @@ collections.sumArray = function(arr){
 // ============ EXTRA CREDIT =====================
 
 
-// 16. create a function, collection.allNumbersEven that loops through an array and returns true if EVERY number is even and false if ANY NUMBER is false.
+// 16. create a function, collections.allNumbersEven that loops through an array and returns true if EVERY number is even and false if ANY NUMBER is false.
 
-// 17. create a function, collectoin.anyPrimes that loopstrhough an array and returns a value if it is a prime number. If there are no prime numbers in the array, return 'there are no prime numbers.'
+collections.allNumbersEven = function(array){
+  //loops through an array
+  for(var i = 0; i < array.length; i++){
+    //return true if EVERY number is even
+    if(array[i] % 2 != 0)
+      return false;
+  }
+  return true;
+};
 
+var passArr = [2, 4, 6, 8, 10];
+var failArr = [2, 4, 6, 8, 9];
 
-
-/* 18. collections.FizzBuzz is a function that takes a number and checks to see whether it's divisible by 3, 5, or 3 and 5.
-  
-  If the number is divisible by 3, return 'fizz'
-  If the number is divisible by 5, return 'buzz'
-  If the number is divisible by 3 & 5, return 'fizzBuzz'
-*/
-
-
-
-
+console.log(collections.allNumbersEven(passArr));
 
 }());
 
